@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Dashboard</title>
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AgP8Aef8Ad/8Ae//Y6f8Afv/O4/+51f+Qvf8Adf8Aev+00v+/2f/F3f/k8P94sf/q9P+nzP9aof8li/+Juf9Blv8Ahf90rv8ZiP/l8f/T5v9wrP8AcP8tj/9YoP+fxv+Etv9jpv/0+v8Abv9MhurRAAAEhklEQVR4nO2d6XLqMAxGIXYNTdhD2C6lLPf9n/GGTju30FAUIXlhvvO74+mZGHmXOh0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkxXQ0q7blYrfs2iKTwLruercoV9VsNA0t1+kMV2tjCmudc11J6vaszYxZT0Yh9cYTZ6yo2E+scZNxKL8y19b7lMzLTQjBSv3zfXM0lXe/8Tzz5ncmm3vuqkMjG1ju48zQp+As9+x3Jp89uaBPxWEYwVrRU0cdm0CC3a7xE27mvoPMf9zch2Dld5i4JPMwLm7C9dEzRn92U/qbyTRhS23Bcag4+kWuHWwmYT9h/REnyobh4ugXTldwFDbOnFGenwbvpHU3XakarkP71aw1BafhO2ndTTW3pyL4GdaGmntTs5Azti8KzUVUFT7Q1KFGc266isJwq2hYCg74ztrCnMkK22o72WlOTRdChtbkbrF9nfVHvd5osD8cdzY35918kuFC0XAnYWjNcjL8EfGnvdmB1rzbKRouJfy2vVvND2mD0VLR8HHBfPvLeN0nDreKho92Uru8+f1aGFpFwwcHi+z99+aJhoWi4WNTmux4p3miYRarob3zBcmGJlJDwl5n4oaE/eq0e6nZ328+aUNHWZknbWj6z25I2lxJ2TAjrcuTNjw9uSFx0ZqwYTb4vd3TdLoZv4z3RbKGt0/9xtXOmfwTmmCUhjfXrKucuHURuaG7Mec+zYlfLXpDe2hubsdbb0ZoWOwbW9szzwgiNLwRSnmNRWnYPCkl7qylYdh4bMs+bY3RsPE8jL29nIwhe2syFcMT+7Q1FUP+3aNUDF+e3vDP0/dSGMIwfsPnjzQwhGFQQ2cveWs0fLPXJGPojq+XVC8NbU2r1+s/I87Fwxtyb/FSH+NEYEg5Z2qAerczXUPilnfChgdiqEnX8D2dSMM0pD6KS9eQunGTrCH5IUCyhr2nNxxQZ73JGr6mMy9lGm6f3pB8TT5ZQ6JfuoYn8oo4VUP6mj9VQ/qBaQSGrBUwde0Ug6E99AeXNL2xOPWH3xkdyeeJ4Q279io9WfNO1F9zAf3ANALDa0zTO5KkdxNhCEMYwhCGMIQhDGEIQxg+BOvxgLhhhK/VhQ01s30x/yVhQ82cCsy8GMKGmnkxmJfPZQ1Vc5sw89MIG2rmp2HmGBI21MwxRD4e0jRUTbrHzPUlbKiZ62vGG/JlDWnvwpkwc+7JGqrm3GPmTRQ2VC3rwct9KWuomvuSmXRP1FA5zS7vVaSooerPsMN8UidqqJxHmPfwU9JQPRc0602dpKF6Pm9WTnZBQ/2c7KzaD4KGHvLqc2ojyBn6qI3AqW9h/ggZ+qlvweinYoaeapS0rzMjZeirzkz7WkFChhGXQ5Ix9CnYtmaXhKHnml0t664JGHqvu9ZpVTvvYcMQtfNqNuT6hw8a2rwMVuORWMPyEcOQNSw/GE3WxmR36pDm7Q0/6pAWxqxXngNME+dasquPWrLu+trl1+3LRsO3W7VkC9td7hblNo5asgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGjDPyaoXhuRqUdoAAAAAElFTkSuQmCC"> 
+    <style>
+        #nav{
+        display: grid;
+        position: sticky;
+        top:0%;
+        z-index:20;
+        margin-top: 10px;;
+        grid-template-columns: auto auto auto auto;
+        padding:5px;
+        row-gap: 10px;
+        column-gap: 15px;
+        text-align: center;
+        background-color: aliceblue;
+        }
+        #nav>div{
+            font-family: sans-serif;
+            margin:10px;
+        }
+        #nav>div>h1{
+            position: relative;
+            left:-75px;
+            bottom: 10px;
+            color:blue;
+            font-size: 52px;
+            
+        }
+        #nav>div>img{
+            position: relative;
+            top:20px;
+            border-radius: 20px;
+            box-shadow:8px 8px 8px gray;
+        }
+        .search{
+            height: 35px;
+            width:600px;
+            position: relative;
+            top:40px;
+            right:80px;
+            border-radius: 50px;
+            font-style: italic;
+            border-color: #5650de;
+        }
+        #main{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        padding:15px;
+        background-color:#5750dee3;
+        box-shadow: 10px 10px 10px gray;
+        row-gap: 10px;
+        column-gap: 15px;
+        text-align: center;
+        }
+        #main>div{
+            background-color: white;
+            box-shadow: 8px 10px 10px white;
+            font-family: sans-serif;
+            margin:20px;
+            border-radius: 20px;
+            height:270px;
+        }
+        #main>div>img{
+            width:800px;
+            height:200px;
+        }
+        #main>div>p{
+            text-align: center;
+        }
+        h3{
+            text-align: center;
+            font-size: 30px;
+            background-color:#5750dee3;
+            color:white;
+            padding:15px;
+            font-family: sans-serif;
+        }
+        #response{
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        padding:15px;
+        padding-bottom: 30px;
+        background-color:#5750dee3;
+        row-gap: 1px;
+        column-gap: 15px;
+        text-align: center;
+        box-shadow: 10px 10px 10px gray;
+        }
+        #response>div{
+            background-color: white;
+            box-shadow: 8px 10px 10px white;
+            font-family: sans-serif;
+            margin:10px;
+            border-radius: 20px;
+            height:250px;
+        }
+        #response>div:hover{
+            height:260px;
+            width:270px;margin: 0%;
+        }
+        #response>div>h5{
+            text-align: left;
+            font-size: 22px;
+            padding-left: 20px;;
+        }
+        #response>div>svg{
+            position: relative;
+            bottom: 55px;
+            left:100px;
+        }
+        #response>h1{
+            position:relative;
+            bottom: 120px;;
+        }
+        #graph{
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        padding:15px;
+        padding-bottom: 30px;
+        background-color:#5750dee3;
+        row-gap: 1px;
+        column-gap: 15px;
+        text-align: center;
+        margin-top: 30px;
+        box-shadow: 10px 10px 10px gray;
+        }
+        #graph>div{
+            background-color: white;
+            box-shadow: 8px 10px 10px white;
+            font-family: sans-serif;
+            margin:10px;
+            border-radius: 20px;
+            height:400px;
+        }
+        #graph>div>img{
+            height: 300px;
+            width:640px;
+            padding: 5px;
+            margin:15px;
+            border-radius: 20px;
+            position: relative;
+            top:50px;
+        }
+        .para{
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        padding:15px;
+        background-color:#5750dee3;
+        box-shadow: 10px 10px 10px gray;
+        row-gap: 10px;
+        column-gap: 15px;
+        }
+        .para>div{
+            background-color: white;
+            box-shadow: 8px 10px 10px white;
+            font-style: italic;
+            margin:10px;
+            padding: 20px;
+            font-size: 20px;
+            border-radius: 20px;
+            height:150px;
+        }
+    #icon{
+        position:fixed;
+        z-index: 20px;
+        bottom: 80px;
+        background-color: #3a3985;
+        color: white;
+        border-radius: 10px 0px;
+        padding:20px;
+        width:200px;
+        text-align: center;
+        font-size: 40px;
+        font-style: italic;
+        font-weight: bold;
+    }
+    #quiz>select{
+        padding: 10px;
+        margin:15px;
+        width:600px;
+        display: flex;
+    }
+    #quiz>select:hover{
+        color:darkblue;
+        font-size:18px;
+        font-style: italic;
+        background-color: rgba(128, 255, 0, 0.87);
+    }
+    #quiz>select>option{
+        background-color: wheat;
+        color: black;
+        font-size:18px;
+        font-style: italic;
+    }
+    button{
+        background-color:powderblue;
+        width:100px;
+        padding: 10px;
+        margin: 10px;
+        font-size: 18px;
+        font-family: sans-serif;
+        font-weight: 700px;
+        text-align: center;
+        border-style: none;
+        position: relative;
+        left:1300px;
+    }
+     /* Media Queries */
+     @media (max-width: 1200px) {
+            #nav {
+                grid-template-columns: 1fr 2fr 1fr; /* Adjust layout for medium screens */
+            }
+            #main {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            #response {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+            #graph {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .para {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #nav {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .search {
+                width: 100%;
+                margin: 0 auto;
+            }
+            #main {
+                grid-template-columns: 1fr;
+            }
+            #response {
+                grid-template-columns: 1fr;
+            }
+            #graph {
+                grid-template-columns: 1fr;
+            }
+            .para {
+                grid-template-columns: 1fr;
+            }
+            button {
+                left: auto;
+                margin: 10px auto;
+                display: block;
+            }
+            #icon {
+                width: 150px;
+                font-size: 30px;
+                bottom: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 22px;
+            }
+            h3 {
+                font-size: 25px;
+            }
+            .para>div {
+                font-size: 16px;
+            }
+            #nav>div>h1 {
+                font-size: 28px;
+            }
+            #icon {
+                width: 120px;
+                font-size: 24px;
+            }
+            button {
+                width: 80px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div id="icon">facebook</div>
+        <div id="nav">
+            <div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AgP8Aef8Ad/8Ae//Y6f8Afv/O4/+51f+Qvf8Adf8Aev+00v+/2f/F3f/k8P94sf/q9P+nzP9aof8li/+Juf9Blv8Ahf90rv8ZiP/l8f/T5v9wrP8AcP8tj/9YoP+fxv+Etv9jpv/0+v8Abv9MhurRAAAEhklEQVR4nO2d6XLqMAxGIXYNTdhD2C6lLPf9n/GGTju30FAUIXlhvvO74+mZGHmXOh0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkxXQ0q7blYrfs2iKTwLruercoV9VsNA0t1+kMV2tjCmudc11J6vaszYxZT0Yh9cYTZ6yo2E+scZNxKL8y19b7lMzLTQjBSv3zfXM0lXe/8Tzz5ncmm3vuqkMjG1ju48zQp+As9+x3Jp89uaBPxWEYwVrRU0cdm0CC3a7xE27mvoPMf9zch2Dld5i4JPMwLm7C9dEzRn92U/qbyTRhS23Bcag4+kWuHWwmYT9h/REnyobh4ugXTldwFDbOnFGenwbvpHU3XakarkP71aw1BafhO2ndTTW3pyL4GdaGmntTs5Azti8KzUVUFT7Q1KFGc266isJwq2hYCg74ztrCnMkK22o72WlOTRdChtbkbrF9nfVHvd5osD8cdzY35918kuFC0XAnYWjNcjL8EfGnvdmB1rzbKRouJfy2vVvND2mD0VLR8HHBfPvLeN0nDreKho92Uru8+f1aGFpFwwcHi+z99+aJhoWi4WNTmux4p3miYRarob3zBcmGJlJDwl5n4oaE/eq0e6nZ328+aUNHWZknbWj6z25I2lxJ2TAjrcuTNjw9uSFx0ZqwYTb4vd3TdLoZv4z3RbKGt0/9xtXOmfwTmmCUhjfXrKucuHURuaG7Mec+zYlfLXpDe2hubsdbb0ZoWOwbW9szzwgiNLwRSnmNRWnYPCkl7qylYdh4bMs+bY3RsPE8jL29nIwhe2syFcMT+7Q1FUP+3aNUDF+e3vDP0/dSGMIwfsPnjzQwhGFQQ2cveWs0fLPXJGPojq+XVC8NbU2r1+s/I87Fwxtyb/FSH+NEYEg5Z2qAerczXUPilnfChgdiqEnX8D2dSMM0pD6KS9eQunGTrCH5IUCyhr2nNxxQZ73JGr6mMy9lGm6f3pB8TT5ZQ6JfuoYn8oo4VUP6mj9VQ/qBaQSGrBUwde0Ug6E99AeXNL2xOPWH3xkdyeeJ4Q279io9WfNO1F9zAf3ANALDa0zTO5KkdxNhCEMYwhCGMIQhDGEIQxg+BOvxgLhhhK/VhQ01s30x/yVhQ82cCsy8GMKGmnkxmJfPZQ1Vc5sw89MIG2rmp2HmGBI21MwxRD4e0jRUTbrHzPUlbKiZ62vGG/JlDWnvwpkwc+7JGqrm3GPmTRQ2VC3rwct9KWuomvuSmXRP1FA5zS7vVaSooerPsMN8UidqqJxHmPfwU9JQPRc0602dpKF6Pm9WTnZBQ/2c7KzaD4KGHvLqc2ojyBn6qI3AqW9h/ggZ+qlvweinYoaeapS0rzMjZeirzkz7WkFChhGXQ5Ix9CnYtmaXhKHnml0t664JGHqvu9ZpVTvvYcMQtfNqNuT6hw8a2rwMVuORWMPyEcOQNSw/GE3WxmR36pDm7Q0/6pAWxqxXngNME+dasquPWrLu+trl1+3LRsO3W7VkC9td7hblNo5asgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGjDPyaoXhuRqUdoAAAAAElFTkSuQmCC" width="80px" height="80px"></div>
+            <div><h1>facebook</h1></div>
+            <div>
+                <input class="search" type="search" placeholder="      Search here">
+            </div>
+        </div><br><br>
+        <div id="main">
+            <div><p>Cost per Clickc(CPC) details</p><h1>$65.11</h1><p>92%<br><br>Vs Previous 7 days</p></div>
+            <div><p>Cost per Thousand</p><h1>193</h1><p>28%<br><br>Mar 31 , 2022 to Mar 30,2023</p></div>
+            <div><p>Monthly New Followers</p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKGEm1S5C1Sg8DkH6Tlu2_j5dY1e08-5EIZg&s"></div>
+        </div>
+        <h3>Quick Stats</h3>
+        <div id="response">
+            <div><h5>Likes</h5><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+              </svg><h1>82,188</h1><p>16%<br>Vs preivous year</p></div>
+            <div><h5>Reach</h5><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+              </svg><h1>466K</h1><p>14%<br>Vs preivous year</p></div>
+            <div><h5>Comments</h5><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+              </svg><h1>6,755</h1><p>648<br>Vs preivous year</p></div>
+            <div><h5>Media Saves</h5><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+              </svg><h1>7,992</h1><p>1,156<br>Vs preivous year</p></div>
+            <div><h5>Impressions</h5><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+              </svg><h1>455K</h1><p>4%<br>Vs preivous year</p></div>
+        </div><br>
+        <h3>Followers By Deep Drive</h3>
+        <div id="graph"><div><img src="data:image/png;base64,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"></div>
+        <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhLqO7mU8-x51BDJH9ZIDxhrVLBard-wJ0unUGApVArApgMRZVBD9j-e_XS-wqcifS7HI&usqp=CAU"></div></div><br><br>
+        <h1 style="color: blue;font-family: sans-serif;">What Metrics Should  be included on an Facebook dashboasrd</h1>
+            <div class="para">
+                <div><b>Follower</b> is the number of users who have choosen to follow another user's or company's posts.And allowing them to see,like and comment on your posts.</div>
+                <div><b>Media Reach</b> is the measure of how many people were exposed to your content.it is an integrated advertise and media agency.</div>
+                <div><b>Profile Views</b> counts the total number of views a social media profile has received from unique accounts over a specified period of time.</div>
+                <div><b>Media Likes</b> is the total count of likes  you received on multiple formats of media posted on your social media page.</div>
+                <div><b>Account Impression</b> counts the total number of times posts or ads from an account has been viewed by social media users.</div>
+            </div><br><br>
+        <div id="quiz">
+            <h1>Let, we Know These info.....</h1>
+            <select>
+                <option>What information is on Facebook dashboard?</option>
+                <option>If you access Dashboard, you can see aggregated insights to help you understand how people are engaging with your content, including posts, reels and videos. To provide these insights, we use aggregated information about how other people engage with your content on Facebook.</option>
+            </select>
+            <select>
+                <option>How do I set up automated questions on Facebook? </option>
+                <option>
+                    <ol>
+                        <li>Step 1: Log in to Facebook. ...</li><br>
+                        <li>Step 2: Click on "Inbox" ...</li><br>
+                        <li>Step 3: Click on "Automations" ...</li><br>
+                        <li>Step 4: Turn on Instant Replies. ...</li><br>
+                        <li>Step 5: Customize Your Message. ...</li><br>
+                    </ol>
+                </option>
+            </select>
+            <select>
+                <option>What is the dashboard on Facebook?</option>
+                <option>A Facebook Analytics dashboard is a visual reporting tool that displays the metrics and KPIs related to your Facebook Page.</option>
+            </select>
+            <select>
+                <option>What type of information is found on Facebook?</option>
+                <option>Personal Information: Information that you've provided when you set up your Facebook accounts and profiles. </option>
+            </select>
+        </div>
+        <button><a href="./homepage.html">Back</a></button>
+    </div>
+</body>
+</html>

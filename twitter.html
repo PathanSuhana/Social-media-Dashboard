@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Analytics Dashboard</title>
+    <link rel="icon" href="data:image/png;base64,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">
+</head>
+<style>
+    /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color:white;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background: whitesmoke;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #ffa62e;
+    color: white;
+}
+
+.date-range button {
+    padding: 8px 12px;
+    border: none;
+    background: white;
+    color:#ffa62e;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Social Media Section */
+.social-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.social-section>h2{
+    color: mediumvioletred;
+    font-size: 40px;;
+}
+.social-icons img {
+    width: 100px;
+    margin: 10px;
+    
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.card {
+    background: #ffa62e;
+    color:white;
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px gray;
+    width: 30%;
+    animation-name: move;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+ 
+@keyframes move {
+    from{
+        transform: translate(-1500px);
+    }
+    to{
+        transform: translate(0px);
+    }
+    
+}
+.card h3 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.card p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Twitter Stats */
+.twitter-stats {
+    background: #eef2f5;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.graphs>img{
+    width:25%;
+    height:300px;
+    border-radius: 25px;
+    box-shadow: 10px 10px 10px gray;
+    padding: 20px;
+    margin:25px;
+}
+.stats-bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Activity Section */
+.activity {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+@keyframes move1 {
+    from{
+        transform: translateX(-1500px);
+    }
+    to{
+        transform: translate(0px);
+    }
+}
+
+.activity .card1 {
+    width: 48%;
+    background: #ffa62e;
+    color:white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px gray;
+    width: 30%;
+    animation-name: move1;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+}
+
+.increase {
+    color: green;
+    font-weight: bold;
+}
+
+/* Mentions and Posts */
+.mentions-posts {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.mentions, .top-posts {
+    width: 48%;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mentions ul, .top-posts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mentions li, .top-posts li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #ffa62e;
+    color: white;
+}
+
+#quiz>select{
+        padding: 10px;
+        margin:15px;
+        width:660px;
+        display: flex;
+    }
+    #quiz>select:hover{
+        color:darkblue;
+        font-size:18px;
+        font-style: italic;
+        background-color: pink;
+    }
+    #quiz>select>option{
+        color: white;
+        font-size:18px;
+        font-style: italic;
+        background-color:darkmagenta;
+    }
+    button{
+        background-color:#ffa62e;
+        width:100px;
+        padding: 10px;
+        margin: 10px;
+        font-size: 18px;
+        font-family: sans-serif;
+        font-weight: 700px;
+        text-align: center;
+        border-style: none;
+        position: relative;
+        left:1300px;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Twitter Analytics</h1>
+            <div class="date-range">
+                <label for="date">Date range:</label>
+                <button id="max-date">Maximum date range</button>
+            </div>
+        </header>
+
+        <!-- Social Media Followers Section -->
+        <section class="social-section">
+            <div class="social-icons">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AgP8Aef8Ad/8Ae//Y6f8Afv/O4/+51f+Qvf8Adf8Aev+00v+/2f/F3f/k8P94sf/q9P+nzP9aof8li/+Juf9Blv8Ahf90rv8ZiP/l8f/T5v9wrP8AcP8tj/9YoP+fxv+Etv9jpv/0+v8Abv9MhurRAAAEhklEQVR4nO2d6XLqMAxGIXYNTdhD2C6lLPf9n/GGTju30FAUIXlhvvO74+mZGHmXOh0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkxXQ0q7blYrfs2iKTwLruercoV9VsNA0t1+kMV2tjCmudc11J6vaszYxZT0Yh9cYTZ6yo2E+scZNxKL8y19b7lMzLTQjBSv3zfXM0lXe/8Tzz5ncmm3vuqkMjG1ju48zQp+As9+x3Jp89uaBPxWEYwVrRU0cdm0CC3a7xE27mvoPMf9zch2Dld5i4JPMwLm7C9dEzRn92U/qbyTRhS23Bcag4+kWuHWwmYT9h/REnyobh4ugXTldwFDbOnFGenwbvpHU3XakarkP71aw1BafhO2ndTTW3pyL4GdaGmntTs5Azti8KzUVUFT7Q1KFGc266isJwq2hYCg74ztrCnMkK22o72WlOTRdChtbkbrF9nfVHvd5osD8cdzY35918kuFC0XAnYWjNcjL8EfGnvdmB1rzbKRouJfy2vVvND2mD0VLR8HHBfPvLeN0nDreKho92Uru8+f1aGFpFwwcHi+z99+aJhoWi4WNTmux4p3miYRarob3zBcmGJlJDwl5n4oaE/eq0e6nZ328+aUNHWZknbWj6z25I2lxJ2TAjrcuTNjw9uSFx0ZqwYTb4vd3TdLoZv4z3RbKGt0/9xtXOmfwTmmCUhjfXrKucuHURuaG7Mec+zYlfLXpDe2hubsdbb0ZoWOwbW9szzwgiNLwRSnmNRWnYPCkl7qylYdh4bMs+bY3RsPE8jL29nIwhe2syFcMT+7Q1FUP+3aNUDF+e3vDP0/dSGMIwfsPnjzQwhGFQQ2cveWs0fLPXJGPojq+XVC8NbU2r1+s/I87Fwxtyb/FSH+NEYEg5Z2qAerczXUPilnfChgdiqEnX8D2dSMM0pD6KS9eQunGTrCH5IUCyhr2nNxxQZ73JGr6mMy9lGm6f3pB8TT5ZQ6JfuoYn8oo4VUP6mj9VQ/qBaQSGrBUwde0Ug6E99AeXNL2xOPWH3xkdyeeJ4Q279io9WfNO1F9zAf3ANALDa0zTO5KkdxNhCEMYwhCGMIQhDGEIQxg+BOvxgLhhhK/VhQ01s30x/yVhQ82cCsy8GMKGmnkxmJfPZQ1Vc5sw89MIG2rmp2HmGBI21MwxRD4e0jRUTbrHzPUlbKiZ62vGG/JlDWnvwpkwc+7JGqrm3GPmTRQ2VC3rwct9KWuomvuSmXRP1FA5zS7vVaSooerPsMN8UidqqJxHmPfwU9JQPRc0602dpKF6Pm9WTnZBQ/2c7KzaD4KGHvLqc2ojyBn6qI3AqW9h/ggZ+qlvweinYoaeapS0rzMjZeirzkz7WkFChhGXQ5Ix9CnYtmaXhKHnml0t664JGHqvu9ZpVTvvYcMQtfNqNuT6hw8a2rwMVuORWMPyEcOQNSw/GE3WxmR36pDm7Q0/6pAWxqxXngNME+dasquPWrLu+trl1+3LRsO3W7VkC9td7hblNo5asgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGjDPyaoXhuRqUdoAAAAAElFTkSuQmCC">
+                <img src="data:image/png;base64,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" alt="Twitter">
+                <img src="data:image/png;base64,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" alt="LinkedIn">
+            </div>
+            <h2>Social Media Followers</h2>
+        </section>
+
+        <!-- Followers Stats -->
+        <section class="stats">
+            <div class="card">
+                <h3>Facebook Page Likes</h3>
+                <p>24,635</p>
+            </div>
+            <div class="card">
+                <h3>Twitter Followers</h3>
+                <p>5,091</p>
+            </div>
+            <div class="card">
+                <h3>LinkedIn Followers</h3>
+                <p>5,405</p>
+            </div>
+        </section>
+
+        <!-- Twitter Stats -->
+        <section class="twitter-stats">
+            <h3>Twitter Stats (@Klipfolio)</h3>
+            <div class="stats-bar">
+                <p>Followers: 5,091</p>
+                <p>Favorites: 6,843</p>
+                <p>Statuses: 11,726</p>
+                <p>Friends: 3,528</p>
+            </div>
+        </section>
+        <section>
+            <div class="graphs">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQleVLDcVR-UskYmepb2OSDXd1iFNuW-Fa35g&s"> 
+                <img src="https://chandoo.org/img/cb/market-share-of-twitter-publishing-tools-bad-pie-chart.png">
+                <img src="https://brand24.com/blog/app/uploads/2022/12/twitter-sentiment-analysis-adidas-negative-mentions-chart-min.jpg">
+            </div>
+        </section>
+        <!-- Recent Activity -->
+        <section class="activity">
+            <div class="card1">
+                <h3>Previous Tweets</h3>
+                <p>406 <span class="increase">↑ 280%</span></p>
+            </div>
+            <div class="card1">
+                <h3>Recent Tweets</h3>
+                <p>486 <span class="increase">↑ 360%</span></p>
+            </div>
+            <div class="card1">
+                <h3>Retweets</h3>
+                <p>171<span class="increase">↑ 160%</span></p>
+            </div>
+        </section>
+
+        <!-- Recent Mentions & Posts -->
+        <section class="mentions-posts">
+            <div class="mentions">
+                <h3>Recent Mentions</h3>
+                <ul>
+                    <li>Playing with @Klipfolio</li>
+                    <li>I'm building a #marketing #dashboard</li>
+                    <li>Check out this week's Metrics</li>
+                </ul>
+            </div>
+
+            <div class="top-posts">
+                <h3>Top 5 Posts</h3>
+                <ul>
+                    <li>We're excited to share that PowerMetrics is live on... <span>21 likes</span></li>
+                    <li>So excited to witness the sea of people out in... <span>14 likes</span></li>
+                    <li>Inequality and ignorance cannot persist... <span>13 likes</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 Twitter Analytics Dashboard</p>
+        </footer><br><br>
+        <div id="quiz">
+            <h1>Let, we Know These info.....</h1>
+            <select>
+                <option> Is Twitter the right platform for my business?</option>
+                <option>There is no absolute answer until you define your buyer personas. When creating your buyer personas,<br> you need to consider including customer demographics, behavior patterns, motivations, and goals. </option>
+            </select>
+            <select>
+                <option>How much do I need to know about Twitter before jumping in?</option>
+                <option>You need to know it's a micro-blogging platform where you create and curate relevant information to a<br> like-minded audience in 140 characters or less.  This  type content sharing allows you to build<br> specific communities around industry and social topics or news.</option>
+            </select>
+            <select>
+                <option>How do I identify the right people to follow?</option>
+                <option>There are multiple resources to identify people, one is WeFollow, which makes recommendations based on<br> a specific topic. Another way to identify followers is to use #hashtags attached to specific words<br> or topics; see who's tweeting relevant interests, and follow those peeps.</option>
+            </select>
+            <select>
+                <option>What is the best way to capture the attention of new followers and influencers in my sector?</option>
+                <option>Sharing relevant information regularly. Curating industry related news hot off the press, and/or crafting<br> posts that establish you as a Thought Leader, someone who is an authority in their niche, for<br> which others look to for guidance or inspiration.</option>
+            </select>
+        </div>
+    </div>
+    <button><a href="./homepage.html">Back</a></button>
+</body>
+</html>

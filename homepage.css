@@ -1,0 +1,569 @@
+/* Apply smooth transitions */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgba(160, 95, 138, 0.144);
+    color: rgb(70, 71, 81);
+    font-family: 'Open Sans', sans-serif;
+    animation: fadeIn 1.2s ease-in-out, bgColorChange 10s infinite alternate;
+  }
+  
+  /* Fade-in animation for page load */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Background subtle color change */
+  @keyframes bgColorChange {
+    0% {
+      background-color: rgba(160, 95, 138, 0.144);
+    }
+    100% {
+      background-color: rgba(95, 138, 160, 0.2);
+    }
+  }
+  
+  /* Text pop-in effect */
+  h1, h2, h3, p {
+    opacity: 0;
+    animation: textPop 1s ease-in-out forwards;
+  }
+  
+  @keyframes textPop {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Smooth hover effect for links & buttons */
+  a, button {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  a:hover, button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+  
+  /* Smooth button click effect */
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Floating animation for elements like icons */
+  .icon {
+    display: inline-block;
+    animation: floating 2s ease-in-out infinite;
+  }
+  
+  @keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  
+  
+  
+  .material-icons-outlined {
+    vertical-align: middle;
+    line-height: 1px;
+    font-size: 30px;
+  }
+  
+  /* ---------- TEXT & BACKGROUND COLOR EFFECTS ---------- */
+  
+  .text-secondary {
+    color: rgb(70, 71, 81);
+    transition: color 0.5s ease-in-out;
+  }
+  
+  .text-blue {
+    color:blue;
+    animation: colorPulse 2s infinite alternate;
+  }
+  
+  .background-blue {
+    background-color:white;
+    animation: bgPulse 3s infinite alternate;
+  }
+  
+  .text-red {
+    color: rgb(213, 0, 0);
+    animation: colorPulse 2s infinite alternate;
+  }
+  
+  .background-red {
+    background-color: rgb(213, 0, 0);
+    animation: bgPulse 3s infinite alternate;
+  }
+  
+  .text-green {
+    color:#f00b50;
+    animation: colorPulse 2s infinite alternate;
+  }
+  
+  .background-green {
+    background-color:#f00b50;
+    animation: bgPulse 3s infinite alternate;
+  }
+  
+  .text-orange {
+    color: rgb(255, 111, 0);
+    animation: colorPulse 2s infinite alternate;
+  }
+  
+  .background-orange {
+    background-color: rgb(255, 111, 0);
+    animation: bgPulse 3s infinite alternate;
+  }
+  
+  /* Animation for color pulsing */
+  @keyframes colorPulse {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.7;
+    }
+  }
+  
+  /* Background color smooth transition */
+  @keyframes bgPulse {
+    from {
+      filter: brightness(1);
+    }
+    to {
+      filter: brightness(1.2);
+    }
+  }
+  
+  /* ---------- GRID CONTAINER WITH LOADING EFFECT ---------- */
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      'sidebar header header header'
+      'sidebar main main main';
+    height: 100vh;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+  
+  /* Fade-in effect */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ---------- HEADER ANIMATION ---------- */
+  
+  .header {
+    grid-area: header;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: slideIn 0.8s ease-in-out forwards;
+  }
+  
+  /* Header slide-in animation */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* ---------- MENU ICON ANIMATION ---------- */
+  
+  .menu-icon {
+    display: none;
+    opacity: 0;
+    animation: bounceIn 1s ease-in-out forwards 0.5s;
+  }
+  
+  /* Bounce effect for menu icon */
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* ---------- SIDEBAR ---------- */
+  
+  #sidebar {
+    grid-area: sidebar;
+    height: 100%;
+    background-color: rgb(29, 38, 154);
+    color: rgb(255, 255, 255);
+    overflow-y: auto;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+  }
+  
+  .sidebar-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 30px;
+  }
+  
+  .sidebar-title > span {
+    display: none;
+  }
+  
+  .sidebar-brand {
+    margin-top: 15px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  
+  .sidebar-brand > .material-icons-outlined {
+    font-size: 50px;
+  }
+  
+  .sidebar-list {
+    padding: 0;
+    margin-top: 15px;
+    list-style-type: none;
+  }
+  
+  .sidebar-list-item {
+    padding: 20px 20px 20px 20px;
+    font-size: 18px;
+  }
+  
+  .sidebar-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+  }
+  
+  .sidebar-list-item > a {
+    text-decoration: none;
+    color: rgb(180, 184, 244);
+  }
+  
+  .sidebar-responsive {
+    display: inline !important;
+    position: absolute;
+  }
+  
+  /* ---------- MAIN ---------- */
+  
+  .main-container {
+    grid-area: main;
+    overflow-y: auto;
+    padding: 20px 20px;
+  }
+  .main-title {
+    display: flex;
+    justify-content: space-between;
+  }
+  .main-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 25px;
+    color: rgb(255, 255, 255);
+    border-radius: 25px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+    animation: fadeInCard 0.8s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Fade-in and slide-up animation for cards */
+  @keyframes fadeInCard {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .card:first-child {
+    background-color: rgb(213, 0, 0);
+  }
+  
+  .card:nth-child(2) {
+    background-color: rgb(47, 125, 46);
+  }
+  
+  .card:nth-child(3) {
+    background-color: rgb(255, 111, 0);
+  }
+  
+  .card:nth-child(4) {
+    background-color: rgb(29, 38, 154);
+  }
+  
+  .card-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: popIn 0.6s ease-out;
+  }
+  
+  /* Inner content pop-in animation */
+  @keyframes popIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .card-inner > span {
+    font-size: 20px;
+    animation: textFadeIn 1s ease-in-out;
+  }
+  
+  /* Text fade-in effect */
+  @keyframes textFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  
+  
+  .products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  /* Product Card with load and hover animations */
+  .product-card {
+    height: 350px;
+    background-color: rgb(255, 255, 255);
+    padding: 25px;
+    border-radius: 30px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+    animation: fadeSlideIn 0.8s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Fade and slide up animation for product cards */
+  @keyframes fadeSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .product-description {
+    padding-top: 50px;
+    animation: fadeInText 1s ease-out;
+  }
+  
+  /* Text fade-in animation */
+  @keyframes fadeInText {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Button icon animation: scale on hover */
+  .product-button > .material-icons-outlined {
+    font-size: 40px;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-button > .material-icons-outlined:hover {
+    transform: scale(1.1);
+  }
+  
+  .social-media {
+    height: 350px;
+    padding: 15px;
+    animation: fadeIn 1s ease-out;
+    margin: 10px;
+  }
+  
+  /* Generic fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  /* Product Icon: Pulse animation */
+  .product-icon {
+    color: rgb(255, 255, 255);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    animation: pulse 2s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .product-icon > .bi {
+    font-size: 25px;
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+.product-icon > .bi:hover {
+    color: green;
+  }
+
+  button{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    background-color:lawngreen;
+    color:blue;
+    border-radius: 10px;
+    border-style: none;
+    padding:20px;
+    margin:5px;
+    position: relative;
+    left:480px;
+    box-shadow: 5px 5px 5px gray;
+  }
+  
+  /* ---------- MEDIA QUERIES ---------- */
+  
+  /* Medium <= 992px */
+  @media screen and (max-width: 992px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.2fr 3fr;
+      grid-template-areas:
+        'header'
+        'main';
+    }
+  
+    #sidebar {
+      display: none;
+    }
+  
+    .menu-icon {
+      display: inline;
+    }
+  
+    .sidebar-title > span {
+      display: inline;
+    }
+  }
+  
+  /* Small <= 768px */
+  @media screen and (max-width: 768px) {
+    .main-cards {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 0;
+    }
+  
+    .products {
+      grid-template-columns: 1fr;
+      margin-top: 30px;
+    }
+  }
+  
+  /* Extra Small <= 576px */
+  @media screen and (max-width: 576px) {
+    .header-left {
+      display: none;
+    }
+  }
